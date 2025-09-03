@@ -1,12 +1,58 @@
-# Todo CLI App
+# Todo CLI Application
 
-**Theme Chosen:** To-Do List Manager
+## Description
+This is a Command-Line Interface (CLI) app for managing tasks, built using TypeScript. It provides CRUD (Create, Read, Update, Delete) functionality, along with features like export to JSON and CSV files.
 
-A simple command-line todo list application built with TypeScript for learning CRUD operations and CLI development.
+## Features
+- **Add a new task**: Add a task with a title and completion status.
+- **List all tasks**: View your entire task list with their completion status.
+- **Update a task**: Edit task titles and toggle completion status.
+- **Delete a task**: Remove a task from your list with confirmation.
+- **Export Functionality**: Save your task list to JSON or CSV files.
 
-## Project Description
+## Instructions on How to Run the App
 
-This is a beginner-friendly CLI (Command Line Interface) application that allows you to manage your daily tasks. You can add tasks, view them, mark them as complete, edit them, delete them, and export them to files. The app is built using TypeScript and runs in the terminal, demonstrating core programming concepts like CRUD operations, file I/O, and user input handling.
+### Prerequisites
+- Node.js (v14 or newer recommended)
+- npm (usually included with Node.js)
+
+### Steps
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/kimh4k/todo-list-cli.git
+   cd todo-list-cli
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the application:**
+   ```bash
+   npm start
+   ```
+   This command will first compile the TypeScript code into JavaScript in a `dist` folder and then run the application.
+
+## Mini Report
+
+### What I Learned
+- Learned to structure TypeScript project using CommonJS modules, including the necessary configurations in `package.json` and `tsconfig.json`.
+- Practiced organizing the code into distinct layers: Models (data structure), Services (business logic), and CLI (user interface).
+- Learned to use the `readline-sync` library to create interactive command-line interface with user input.
+- Implemented file I/O operations for exporting data to JSON and CSV formats.
+
+### Challenges Faced
+- Setting up TypeScript configuration and understanding module systems.
+- Implementing proper user input validation and error handling.
+- Managing unique task IDs and array manipulation for CRUD operations.
+- Learning CSV formatting with proper quote escaping for special characters.
+
+### Future Improvements
+- **Data Persistence**: Implement automatic saving to JSON file on exit and loading on startup.
+- **Task Priorities**: Add priority levels (high, medium, low) with color coding.
+- **Due Dates**: Allow users to set deadlines for tasks.
+- **Search Functionality**: Search tasks by title or keywords.
 
 ## Functionality
 
@@ -170,60 +216,14 @@ Note: The `dist/` folder will be created when you run `npm run build` and contai
 5. **Array Operations**: Learning to safely modify arrays without causing index issues
 6. **File Path Handling**: Understanding how to work with file paths across different operating systems
 7. **CSV Format**: Learning proper CSV formatting including quote escaping for commas in text
-8. **Error Recovery**: Making the app robust so it doesn't crash on invalid user input
 
 ### Improvements I'd Make With More Time
 
 #### Enhanced Features:
 1. **Data Persistence**: Save tasks to a JSON file so they persist between app sessions
-2. **Task Priorities**: Add high/medium/low priority levels with color coding
+2. **Task Priorities**: Add high/medium/low priority levels
 3. **Due Dates**: Allow users to set deadlines and get reminders for overdue tasks
 4. **Categories/Tags**: Organize tasks into categories like work, personal, shopping
 5. **Search Functionality**: Find tasks by title keywords or content
-6. **Task Statistics**: Show charts of completed vs pending tasks, productivity metrics
+
 7. **Undo Feature**: Allow users to undo recent actions like deletions
-
-#### User Experience:
-8. **Better UI**: Add colors, icons, and better formatting using libraries like chalk
-9. **Keyboard Shortcuts**: Quick actions without going through menus
-10. **Auto-save**: Automatically save changes without manual export
-11. **Import Feature**: Load tasks from JSON/CSV files
-12. **Bulk Operations**: Select and operate on multiple tasks at once
-
-#### Technical Improvements:
-13. **Unit Testing**: Add Jest tests for all CRUD operations
-14. **Configuration File**: Allow users to customize app settings
-15. **Database Integration**: Use SQLite or another database instead of in-memory storage
-16. **API Integration**: Sync tasks with cloud services like Google Tasks
-17. **Better Error Logging**: More detailed error messages and logging system
-
-## Technologies Used
-
-- **TypeScript**: Main programming language providing type safety and modern JavaScript features
-- **Node.js**: Runtime environment for executing JavaScript outside the browser
-- **readline-sync**: Library for synchronous user input in command-line applications
-- **fs (File System)**: Node.js built-in module for file read/write operations
-- **path**: Node.js built-in module for working with file and directory paths
-- **npm**: Package manager for managing dependencies and build scripts
-
-## Project Structure
-
-```
-todo-cli-app/
-├── src/
-│   ├── models/
-│   │   └── Task.ts          # Task interface definition (id, title, completed)
-│   ├── services/
-│   │   └── TaskService.ts   # Business logic for CRUD + Export operations
-│   ├── cli.ts               # Command-line interface and user interaction
-│   └── index.ts             # Application entry point
-├── dist/                    # Compiled JavaScript files (auto-generated)
-├── .gitignore              # Files to ignore in version control
-├── package.json            # Project dependencies and scripts
-├── tsconfig.json           # TypeScript configuration
-└── README.md               # Project documentation
-```
-
-## License
-
-This is a learning project created for educational purposes as part of an internship program.
